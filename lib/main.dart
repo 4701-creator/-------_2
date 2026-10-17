@@ -12,8 +12,8 @@ class AppTheme {
   static const Color surface = Color(0xFF161B22);
   static const Color surfaceAlt = Color(0xFF21262D);
   static const Color border = Color(0xFF30363D);
-  static const Color primary = Color(0xFFCF222E); // لون يوتيوب الأحمر
-  static const Color primaryLight = Color(0xFFFF7B72);
+  static const Color primary = Color(0xFF1F6FEB);
+  static const Color primaryLight = Color(0xFF58A6FF);
   static const Color textPrimary = Color(0xFFE6EDF3);
   static const Color textMuted = Color(0xFF8B949E);
 
@@ -92,7 +92,7 @@ class _DownloadHomePageState extends State<DownloadHomePage> {
   Future<void> _openDownloadSite() async {
     final url = _urlController.text.trim();
     if (url.isEmpty) {
-      _showSnack('الرجاء إدخال رابط يوتيوب صالح');
+      _showSnack('الرجاء إدخال رابط يوتيوب أولاً');
       return;
     }
 
@@ -132,7 +132,7 @@ class _DownloadHomePageState extends State<DownloadHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('محمل فيديوهات يوتيوب'),
+        title: const Text('تنزيل فيديوهات من يوتيوب'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -151,7 +151,7 @@ class _DownloadHomePageState extends State<DownloadHomePage> {
             ),
             const SizedBox(height: 24),
             const Text(
-              'أدخل رابط الفيديو أدناه للتحميل بأعلى جودة',
+              'أدخل رابط فيديو يوتيوب أدناه للتحميل بأعلى جودة',
               style: TextStyle(
                 color: AppTheme.textMuted,
                 fontSize: 15,
@@ -181,7 +181,7 @@ class _DownloadHomePageState extends State<DownloadHomePage> {
                 ),
                 icon: const Icon(Icons.download_rounded),
                 label: const Text(
-                  'تحميل الفيديو',
+                  'بدء التحميل',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
